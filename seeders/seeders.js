@@ -39,10 +39,21 @@ async function createUsers() {
     { username: "user1", email: "user1@email.com" },
     { username: "user2", email: "user2@email.com" },
     { username: "user3", email: "user3@email.com" },
+    { username: "user4", email: "user4@email.com" },
+    { username: "user5", email: "user5@email.com" },
+    { username: "user6", email: "user6@email.com" },
+    { username: "user7", email: "user7@email.com" },
+    { username: "user8", email: "user8@email.com" },
+    { username: "user9", email: "user9@email.com" },
+    { username: "user10", email: "user10@email.com" },
   ];
 
+  const startDate = new Date("2021-10-01");
+  const endDate = new Date("2021-10-31");
+
   for (let data of userData) {
-    const user = new User(data);
+    const randomDate = new Date(startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime()));
+    const user = new User({ ...data, createdAt: randomDate });
     await user.save();
   }
 }
@@ -60,7 +71,7 @@ async function createGroupUsers() {
       const groupUser = new GroupUser({
         groupId: group._id,
         userId: user._id,
-        createdAt: dates[Math.floor(Math.random() * dates.length)],
+        createdAt: dates[Math.floor(Math.random() * dates.length)], // Random user joined date
       });
       await groupUser.save();
     }
