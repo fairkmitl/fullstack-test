@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "seed": "node -r dotenv/config -e \"require('./seeders/seeders.js').seedData()\"",
-    "export": "node -r dotenv/config export.js"
+    "export": "node -r dotenv/config export.js",
+    "update-users": "node -r dotenv/config updateUsers.js"
   },
   "keywords": [],
   "author": "",
