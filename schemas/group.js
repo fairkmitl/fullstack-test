@@ -1,4 +1,5 @@
-const { Schema } = require('mongoose');
+const mongoose = require("mongoose");
+const { Schema } = require("mongoose");
 
 const GroupSchema = new Schema({
   createdAt: { type: Date, default: new Date() },
@@ -8,13 +9,11 @@ const GroupSchema = new Schema({
   name: { type: String, required: true },
   status: {
     type: String,
-    enum: [
-      'active',
-      'deleted',
-    ],
+    enum: ["active", "deleted"],
   },
   updatedAt: { type: Date, default: new Date() },
 });
 
-module.exports = GroupSchema;
+const Group = mongoose.model("Group", GroupSchema);
 
+module.exports = Group;
