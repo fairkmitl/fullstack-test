@@ -12,6 +12,7 @@
   "dependencies": {
     "auto-load": "^3.0.4",
     "dotenv": "^14.2.0",
+    "mongodb": "^5.6.0",
     "mongoose": "^5.13.14"
   },
   "devDependencies": {
