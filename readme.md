@@ -1,33 +1,58 @@
-# Questions
-## ***Please make it as much professional in all aspects as you can***
-## Question 1
-Please write a node.js code that queries and exports data to a CSV file. A list of usernames and emails of users, who are members of private groups and joined the group in the November of 2021 is expected in the file. *(Please refer to the ` Data Schema ` section for more detail)*
+# Fullstack Engineer Test - Amity
 
-The example of file content is shown below. *(Please note that the 1st line is the headers.)*
-```
-Group Name,Username,Email
-Group 1,user1,user1@email.com
-```
-The sorting must match the following orders.
-1. Sort by group name ascending
-2. Sort by username ascending
-## Question 2
-Please write a node.js code that updates all the users in the mongodb by capitalizing the first letter of their own usernames.
-For example:
-```
-username:
-user1 => User1
-john-doe => John-doe
-```
+## Overview
 
-# Data Schema
-Schema files are located in the `/schemas` folder. The folder contains 3 schema files as listed here.
-1. User
-2. Group
-3. Group User
-### User
-An idividual user must have username and eamil registered in the system.
-### Group
-The `meta.isPrivate` field is a flag to specify if a group is private or not.
-### Group User
-It is composed of group id and user id. The `createdAt` field can be used to determine when a user joined a group.
+This repository contains the solutions for the Fullstack Engineer Test, which includes two questions. Each question has its own set of code files and instructions.
+
+## Directory Structure
+
+The project directory is structured as follows:
+
+- `schemas/`: Contains the schema files for the MongoDB models.
+- `seeders/`: Contains the script to seed the MongoDB database with mock data.
+- `export.js`: The code file for exporting data to a CSV file (Question 1).
+- `updateUsernames.js`: The code file for updating the usernames in MongoDB (Question 2).
+- `README.md`: This file providing instructions and information about the project.
+
+## Dependencies
+
+The project relies on the following dependencies:
+
+- `mongoose`: For MongoDB database connectivity and querying.
+- `csv-writer`: For writing data to a CSV file.
+
+### Question 1
+
+The goal of this question is to create a Node.js application that exports data from MongoDB to a CSV file. The data to be exported consists of usernames and emails of users who are members of private groups and joined the group in November 2021.
+
+To run the code for Question 1, follow the steps below:
+
+1. Ensure you have Node.js installed on your machine.
+2. Install the required dependencies by running the following command: `npm install`
+3. Seed the MongoDB database with mock data by running the following command: `npm run seed`
+4. After the seed data is generated, you can export the desired data to a CSV file by running the following command: `npm run export` or `node export.js`
+5. The exported data will be saved in the `output.csv` file in the project's root directory.
+
+**Export Result**
+![screenshot](./screenshots/question1-result.png)
+
+### Question 2
+
+The objective of this question is to write a Node.js code that updates all the users' usernames in MongoDB by capitalizing the first letter of each username.
+
+To run the code for Question 2, follow the steps below:
+
+1. Ensure you have Node.js installed on your machine.
+2. Install the required dependencies by running the following command: `npm install`
+3. Ensure MongoDB connection URI configuration is corrected.
+4. Run the following command to execute the script that updates the usernames: `node updateUsernames.js` or `npm run update-users`
+5. The script will connect to the MongoDB database, update the usernames, and then disconnect from the database.
+6. After the script finishes running, you can check your MongoDB database to see the updated usernames.
+
+**Export Result after capitalizing**
+![screenshot](./screenshots/question2-result.png)
+
+## Contact
+
+If you have any questions or need further assistance, please feel free to reach out.
+Email : <weerapat.buachuen@gmail.com> or <farry.allen@gmail.com>
