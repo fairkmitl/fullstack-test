@@ -1,4 +1,4 @@
-# Fullstack Engineer Test - Amity
+# Fullstack Engineer Test
 
 ## Overview
 
